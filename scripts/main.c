@@ -192,7 +192,7 @@ void Task_Senzor_Core1(void *param)
 
         if (!local_stop) {
             if (xSemaphoreTake(date_sensor_mutex, pdMS_TO_TICKS(1000))) {
-                bme280_read_raw();
+                bmp280_read_raw();
                 sensors_value.temp = real_temp();
                 sensors_value.pressure = get_real_pressure();
                 xSemaphoreGive(date_sensor_mutex);
@@ -300,7 +300,7 @@ void Task_Hardware_init(void *param)
     i2c_master_init();
     i2c_data_init();
     lcd_init();
-    bme280_init();
+    bmp280_init();
 
     adc1_config_width(ADC_WIDTH_BIT_12);
     adc1_config_channel_atten(ADC1_CHANNEL_6, ADC_ATTEN_DB_12);
