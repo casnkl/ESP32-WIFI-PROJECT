@@ -3,7 +3,7 @@ This project collects data from a sensor and processes it using an RTOS to ensur
 
 ## WORKFLOW REPRESENTATION
 The representation of the project workflow is presented below:
-![WORKFLOW REPRESENTATION](images/Workflow.png)
+![WORKFLOW REPRESENTATION](images/workflow.png)
 
 ## Workflow Description
 - The workflow begins with the **configuration of all system peripherals**, including GPIOs, I2C, timers, and the **Wi-Fi peripheral**. An LCD display communicating over I2C through the PCF8574 expander is initialized, along with the BME280 sensor used for environmental data acquisition. Once all peripherals are configured, the **ESP initialization** phase is completed and the system enters the Wi-Fi connection handling state.
